@@ -1,0 +1,57 @@
+
+<img src="https://vignette.wikia.nocookie.net/halo/images/3/35/USER_Coolbudd379_sandwich.png/revision/latest?cb=20141223054121"
+>
+<h1>Its burger time!!!</h1>
+<div id="ready" class="ready col-xs-6">
+<h1>Ready to be devoured!</h1>
+{{#each burgerData}}
+    <h1>
+    {{#if this.devoured}}
+      <span class="ate">             <span>You ate: {{burger_name}}
+    {{else}}
+      {{burger_name}} 
+      <form action="/update/{{ id }}" method="post">
+      <button class="btn btn-lrg btn-primary" type="submit">Devour it!</button>
+    </form> 
+    {{/if}}  
+  </h1>
+{{/each}}
+<div>
+    <div class="submit">
+      <form action="/create" method="post">
+        <textarea name="item" rows="2" cols="30"></textarea>
+        <br>
+        <button class="btn btn-lrg btn-primary" id="newBurger" type="submit">Enter New Burger</button>
+      <form>
+    </div>
+</div>
+  </div>
+
+
+
+
+   <style>
+  body {
+  background-color: orange;
+  font-family: 'Shrikhand', cursive;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    margin-left: 45%
+  }
+  button {
+    background-color: grey;
+  }
+  h1 {  
+    text-align: center;
+  }
+  .submit {
+    text-align: center;
+
+  }
+  .ate {
+    margin-left: 80%;
+  }
+
+  </style>
